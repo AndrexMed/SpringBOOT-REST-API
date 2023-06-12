@@ -18,16 +18,21 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("El filtro esta siendo llamado!");
+        System.out.println("El filtro esta siendo llamado! - Inicio");
+
         //Obtener el token del header
         var token = request.getHeader("Authorization");
-        if (token == "" || token == null){
-            new RuntimeException("Token Invalido!");
+        System.out.println("Estado del token entrante: " +token);
+
+        if (token != null) {
+            System.out.println("Validamos que el token no fue nulo!");
+            token = token.replace("Bearer ", "HolaMundo : ");
+            System.out.println(token);
+            System.out.println(tokenService.getSubject(token));
+
         }
-        token = token.replace("Bearer ", "HolaMundo : ");
-        System.out.println(token);
-        //System.out.println(tokenService.getSubject(token));
         filterChain.doFilter(request, response);
+
     }
 
 }
