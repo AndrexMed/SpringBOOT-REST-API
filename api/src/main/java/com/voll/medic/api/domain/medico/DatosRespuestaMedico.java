@@ -1,6 +1,6 @@
-package com.voll.medic.api.medico;
+package com.voll.medic.api.domain.medico;
 
-import com.voll.medic.api.direccion.DatosDireccion;
+import com.voll.medic.api.domain.direccion.DatosDireccion;
 
 public record DatosRespuestaMedico(Long id,
                                    String nombre,

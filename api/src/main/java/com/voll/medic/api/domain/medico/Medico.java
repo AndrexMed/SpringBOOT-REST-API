@@ -1,6 +1,6 @@
-package com.voll.medic.api.medico;
+package com.voll.medic.api.domain.medico;
 
-import com.voll.medic.api.direccion.Direccion;
+import com.voll.medic.api.domain.direccion.Direccion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
